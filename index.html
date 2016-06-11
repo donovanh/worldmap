@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>World Map</title>
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <style>
+/*
+ * Unlike other icons, you can style `L.divIcon` with CSS.
+ * These styles make each marker a pink triangle.
+ */
+.css-icon {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid #ff8888;
+  }
+</style>
+  </head>
+  <body>
+    <div id="js-worldMap" class="worldMap"></div>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.min.js"></script>
+    <script src="./javascripts/worldmap.js"></script>
+  </body>
+</html>

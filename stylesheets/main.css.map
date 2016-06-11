@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAGA,UACE,aACA,iBACA,gBACA,qBAAuB,CACxB","file":"main.css","sourcesContent":["/* Base of the stylesheets - include other files from here */\n\n/* Map styles */\n.worldMap {\n  height: 520px;\n  max-width: 1040px;\n  margin: 2em auto;\n  border: 1px solid #eee;\n}\n"]}
