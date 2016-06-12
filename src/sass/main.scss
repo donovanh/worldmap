@@ -2,8 +2,101 @@
 
 /* Map styles */
 .worldMap {
-  height: 520px;
-  max-width: 1040px;
-  margin: 2em auto;
   border: 1px solid #eee;
+  font-family: myriad-pro, myriad pro, myriad, helvetica neue, helvetica, arial, sans-serif;
+  height: 520px;
+  margin: 2em auto;
+  max-width: 1040px;
+}
+
+.worldMap-marker {
+  animation: fade-in .2s ease-out;
+  position: relative;
+}
+
+.worldMap-eventName {
+  animation: show-then-hide 6s cubic-bezier(.7,-0.44,.36,1.48) forwards;
+  background: rgba(#3A76A5, 0.8);
+  border-radius: 0.25em;
+  color: #fff;
+  display: inline;
+  height: 22px;
+  left: 10px;
+  max-width: 240px;
+  overflow: hidden;
+  padding: 2px 6px;
+  position: absolute;
+  text-overflow: ellipsis;
+  top: -10px;
+  white-space: nowrap;
+}
+
+.worldMap-point {
+  border-radius: 50%;
+  border: 6px solid rgba(#3A76A5, 0.2);
+  height: 1px;
+  left: -5.5px;
+  position: absolute;
+  top: -5.5px;
+  width: 1px;
+
+  &:before {
+    content: "";
+    background: #3A76A5;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+  }
+
+  &:after {
+    content: "";
+    background: rgba(#3A76A5, 0.5);
+    position: absolute;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    left: -5px;
+    top: -5px;
+    animation: pulse 1s ease-out forwards;
+  }
+}
+
+/* Animations */
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes show-then-hide {
+  0% {
+    transform: translateX(-8px);
+  }
+  12% {
+    transform: none;
+  }
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  30%, 60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
 }

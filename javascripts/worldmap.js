@@ -17,10 +17,10 @@ ready(function () {
   var mapLeaflet = L.mapbox.map('js-worldMap', 'mapbox.light')
     .setView([20, 0], 2)
 
-  mapLeaflet.scrollWheelZoom.disable();
+  //mapLeaflet.scrollWheelZoom.disable();
 
   // Update the map dynamically
-  var socket = io('http://localhost:3567');
+  var socket = io('https://worldmap-events-api.herokuapp.com');
   socket.on('connected', function() {
     console.log('API has awoken');
   });
@@ -28,10 +28,10 @@ ready(function () {
     // Define an icon called cssIcon
     var cssIcon = L.divIcon({
       // Specify a class name we can refer to in CSS.
-      className: 'css-icon',
-      html: details.name,
+      className: 'worldMap-marker',
+      html: '<span class="worldMap-eventName">' + details.name + '</span><span class="worldMap-point"></span>',
       // Set marker width and height
-      iconSize: [60, 60]
+      iconSize: [1, 1]
     });
     L.marker(details.coords, {icon: cssIcon}).addTo(mapLeaflet);
   });
